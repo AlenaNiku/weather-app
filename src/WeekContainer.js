@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
 
 class WeekContainer extends Component {
-    render() {
-             
+
+  componentDidMount = () => {
+
     const apiKey = "bb92bc497a64f5f4cdcd15d73f3e55ee";
 
+    const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?zip=10022&units=imperial&APPID=${apiKey}`;
+    fetch(weatherURL)
+      .then((res) => res.json())
+      .then((data) => console.log(data.list));
+  };
 
-    this.componentDidMount = () => {
-        const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?zip=10022&units=imperial&APPID=${apiKey}`;
+  render() {
 
-        fetch(weatherURL)
-            .then(resp => resp.json())
-            .then(data => console.log("Data list loaded:", data))
-
-    }
-    
     return (
       <div>
         <h1>hello weather!</h1>
@@ -25,4 +24,4 @@ class WeekContainer extends Component {
 
 export default WeekContainer
 
-// this component will render 5 weather cards
+// this component will fetch the data and render 5 weather cards
