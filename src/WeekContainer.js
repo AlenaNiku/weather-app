@@ -37,8 +37,12 @@ class WeekContainer extends Component {
 
   render() {
     return (
-      <div>
-        {this.renderDailyCards()}
+      <div className="container">
+        <h1 className="display-1 jumbotron">5-Day Forecast.</h1>
+        <h5 className="display-5 text-muted">New York, US</h5>
+        <div className="row justify-content-center">
+          {this.renderDailyCards()}
+        </div>
       </div>
     );
   }
