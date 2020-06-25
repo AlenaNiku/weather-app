@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import WeekContainer from './WeekContainer';
 
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
+      <WeekContainer />
     </div>
   );
 }
